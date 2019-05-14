@@ -12,8 +12,8 @@ import java.util.List;
 public class Node {
 	
 	/**
-	 * Probabilità che un nodo venga creato adiacentemente ad un nodo dato.
-	 * Nota: è importante che non valga mai 0, o la generazione casuale di alberi dà problemi.
+	 * Probabilitï¿½ che un nodo venga creato adiacentemente ad un nodo dato.
+	 * Nota: ï¿½ importante che non valga mai 0, o la generazione casuale di alberi dï¿½ problemi.
 	 */
 	private static final double ADJACENCY_PERCENTAGE = 0.5;
 	
@@ -83,6 +83,13 @@ public class Node {
 	 */
 	public int getNumberOfAdjacents() {
 		return this.adjacents.size();
+	}
+	
+	public boolean containsLabel(String label) {
+		if(getLabel().equals(label)) {
+			return true;
+		}
+		return adjacents.get(0).containsLabel(label);
 	}
 
 }
