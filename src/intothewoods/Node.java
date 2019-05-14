@@ -86,12 +86,16 @@ public class Node {
 	}
 	
 	public boolean containsLabel(String label, Node parentNode) {
+		boolean found = false;
 		if(getLabel().equals(label)) {
-			return true;
+			found = true;
 		} else for(Node adjacent : adjacents) {
-			return adjacent.containsLabel(label, this);
+			if(adjacent != parentNode) {
+				found = adjacent.containsLabel(label, this);
+				if(found) return true;
+			}
 		}
-		return false;
+		return found;
 	}
 
 }
