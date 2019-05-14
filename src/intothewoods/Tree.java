@@ -58,22 +58,11 @@ public class Tree {
 	 * @return true se esiste almeno un nodo con l'etichetta data.
 	 */
 	public boolean containsLabel(String label) {
-//////////////////////////////////////////////////////////////////////////
-//		
-//		TODO
-/*		if(root.getLabel().equals(label)){
+		if(root.getLabel().equals(label)){
 			return true;
 		}else{
-			return root.containsLabel(label);
+			return root.containsLabel(label, root);
 		}
-	*/	
-//		Scrivete il vostro algoritmo qui, richiamando eventuali
-//		metodi della classe Node da voi creati per l'occasione.
-//		
-//		TODO
-//		
-//////////////////////////////////////////////////////////////////////////
-		return false;
 	}
 
 }

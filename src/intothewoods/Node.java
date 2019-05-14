@@ -85,11 +85,13 @@ public class Node {
 		return this.adjacents.size();
 	}
 	
-	public boolean containsLabel(String label) {
+	public boolean containsLabel(String label, Node parentNode) {
 		if(getLabel().equals(label)) {
 			return true;
+		} else for(Node adjacent : adjacents) {
+			return adjacent.containsLabel(label, this);
 		}
-		return adjacents.get(0).containsLabel(label);
+		return false;
 	}
 
 }
